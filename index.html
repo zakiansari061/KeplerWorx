@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeplerWorx-Developer</title>
+  <style>
+    .container {
+      width: 250px;
+      height: 200px;
+      border: 1px solid #720570;
+    }
+
+    .bar {
+      fill: #720570;
+    }
+
+    *,
+    *:before,
+    *:after {
+      font-family: inherit;
+      box-sizing: inherit;
+      color: inherit;
+    }
+
+    :root {
+      --unit: 1.5rem;
+    }
+
+    body {
+      color: #53565a;
+      font-family: "Fira Sans";
+      box-sizing: border-box;
+      box-sizing: border-box;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      background: linear-gradient(to bottom right, #d0dfe7, #7BA7BC);
+    }
+
+    .wrapper {
+      width: 100%;
+    }
+
+    #KeplerWorx {
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+    }
+    
+    p {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .counter {
+      padding: var(--unit);
+      border-radius: 8px;
+      background: linear-gradient(to bottom right, #53565a, #3b3d3f);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: var(--unit);
+    }
+
+    .counter h2 {
+      color: #ffd100;
+      grid-column: span 2;
+      font-size: 6rem;
+      text-align: center;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+      max-width: calc(100%);
+    }
+
+    .counter button {
+      padding: calc(var(--unit) / 2) 0;
+      border-radius: 4px;
+      border: none;
+      font-size: 2rem;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #eee, #ddd);
+    }
+
+    .counter button:hover {
+      cursor: pointer;
+    }
+
+    .counter button span {
+      transition: all 0.15s ease;
+      display: block;
+    }
+
+    .counter button:hover span {
+      transform: scale(1.2);
+      color: #ff6a13;
+      font-weight: bold;
+    }
+
+    .counter button:last-of-type {
+      grid-column: span 2;
+    }
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js" defer></script>
+  <script src="https://d3js.org/d3-scale.v3.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">KeplerWorx</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+  <div class="wrapper">
+	<p>Basic independent react component <br>With One Hook 👇</p>
+	<div id="KeplerWorx">
+	</div>
+  </div>
+  <p> D3.js basic cart of the seven emirates that make up the UAE </p>
+  <svg></svg>
+</body>
+</html>
